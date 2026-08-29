@@ -99,7 +99,7 @@ body::before {
   inset: 0;
   z-index: 999;
   pointer-events: none;
-  background-image: radial-gradient(circle, rgba(var(--text-rgb), 0.22) 1px, transparent 1.7px);
+  background-image: radial-gradient(circle, rgba(var(--text-rgb), 0.06) 1px, transparent 1.7px);
   background-size: 22px 22px;
 }
 
