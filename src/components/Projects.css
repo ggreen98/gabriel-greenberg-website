@@ -15,7 +15,6 @@
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--paper);
-  text-decoration: none;
   color: var(--ink);
   background-image: linear-gradient(
     to bottom,
@@ -33,14 +32,32 @@
   box-shadow: 0 12px 28px -18px rgba(var(--text-rgb), 0.35);
 }
 
+.project-card__title {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 .project-card h3 {
   font-size: 1.3rem;
   margin-bottom: 0.75rem;
+  transition: color 0.2s ease;
+}
+
+.project-card__title:hover h3 {
+  color: var(--cobalt-bright);
 }
 
 .project-card p {
   font-size: 0.95rem;
   color: rgba(var(--text-rgb), 0.78);
+  margin-bottom: 1.25rem;
+}
+
+.project-card__impact {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--verdigris);
   margin-bottom: 1.25rem;
 }
 
@@ -58,6 +75,21 @@
   border-radius: 3px;
   background: var(--verdigris-dim);
   color: var(--cobalt);
+}
+
+.project-card__code {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--cobalt);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-card__code:hover {
+  color: var(--cobalt-bright);
+  border-bottom-color: var(--cobalt-bright);
 }
 
 @media (max-width: 900px) {

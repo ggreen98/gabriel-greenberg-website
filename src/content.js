@@ -10,6 +10,15 @@ export const site = {
   github: 'https://github.com/your-handle', // placeholder — update with your real URL
   resumeHref: '#', // placeholder — link to a hosted resume PDF
   formEndpoint: 'https://formspree.io/f/your-form-id', // placeholder — replace with your Formspree endpoint (see README)
+  availability: 'Open to full-time and contract data science roles — based in Boulder, CO, open to remote.', // placeholder — set what you're actually looking for
+};
+
+// A short third-party quote (former manager, collaborator, client). Set
+// quote to '' to hide this section entirely until you have a real one.
+export const testimonial = {
+  quote: '', // placeholder — e.g. "Gabriel is one of the most rigorous analysts I've worked with."
+  name: '', // e.g. 'Dr. Detlev Helmig'
+  role: '', // e.g. 'Director, Boulder A.I.R.'
 };
 
 export const skills = [
@@ -96,6 +105,10 @@ export const publications = [
   },
 ];
 
+// `impact` is optional — a short, specific, quantified outcome line for a
+// project that deserves a deeper case study (leave unset to omit it).
+// `codeHref` is optional — link straight to a public repo/notebook if you
+// have one; falls back to `href` if unset.
 export const projects = [
   {
     title: 'VOC Trend Analysis Pipeline',
@@ -103,6 +116,8 @@ export const projects = [
       'A Python pipeline that processes FID gas chromatography data from global flask samples, quantifying and plotting trends in non-methane volatile organic compounds.',
     tags: ['Python', 'Atmospheric Chemistry', 'GC-FID'],
     href: '#', // placeholder — link to a write-up or repo
+    codeHref: '', // placeholder — e.g. a GitHub repo/notebook URL
+    impact: '', // placeholder — e.g. "Processed 5+ years of flask data across 40 global sites"
   },
   {
     title: 'Greenhouse Gas Monitoring Dashboard',
@@ -110,6 +125,8 @@ export const projects = [
       "An operational dashboard for Boulder A.I.R.'s air quality monitoring network — data quality control, aggregation, and visualization for a research and public audience.",
     tags: ['Python', 'Dashboards', 'Data QC'],
     href: '#', // placeholder — link to a write-up or repo
+    codeHref: '',
+    impact: '',
   },
   {
     title: 'Air Quality Modeling',
@@ -117,6 +134,8 @@ export const projects = [
       'Statistical and machine learning models relating pollutant concentrations (ozone, PM2.5, VOCs) to emissions sources, supporting peer-reviewed research.',
     tags: ['R', 'Statistical Modeling', 'ML'],
     href: '#', // placeholder — link to a write-up or repo
+    codeHref: '',
+    impact: '',
   },
 ];
 

@@ -11,9 +11,16 @@ export default function Contact() {
         <Reveal className="contact__intro">
           <Eyebrow from="Question" to="Conversation" />
           <h2 className="contact__heading">Let's talk</h2>
+
+          {site.availability && (
+            <p className="availability-badge">
+              <span className="availability-badge__dot" aria-hidden="true" />
+              {site.availability}
+            </p>
+          )}
+
           <p className="contact__blurb">
-            Open to data science and analytics contract work. Send a message directly, or
-            find me on LinkedIn and GitHub.
+            Send a message directly, or find me on LinkedIn and GitHub.
           </p>
 
           <div className="contact__links">

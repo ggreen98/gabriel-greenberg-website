@@ -28,6 +28,32 @@ The contact form posts to [Formspree](https://formspree.io) — free for up to
 Until this is configured, the form's submit button stays disabled and shows
 a small notice instead.
 
+## Strengthening the site for job hunting
+
+Ideas for getting more attention as a young professional, in rough order of
+impact. Templates for most of these already exist in the code — fill in the
+data and they'll show up automatically.
+
+- [ ] **State what you're open to.** `site.availability` in `content.js`
+      drives the badge in the "Let's talk" section (e.g. full-time vs.
+      contract, remote vs. Boulder-based). Already templated and live with a
+      placeholder value — just edit the text.
+- [ ] **Give one project real depth.** A single detailed case study (the
+      problem, your approach, a real quantified outcome) beats three thin
+      summaries. Set a project's `impact` field in `content.js` for a short
+      quantified-outcome line under its description — currently empty/unset
+      on all three, so nothing shows until you add one.
+- [ ] **Add a testimonial.** A quote from a manager or collaborator (e.g. Dr.
+      Helmig) is unusually persuasive early-career, since it's third-party
+      validation. Fill in `testimonial` in `content.js` (quote/name/role) —
+      the section is templated but stays hidden until `quote` is non-empty,
+      so nothing fake ever gets published by accident.
+- [ ] **Link to real code.** Set a project's `codeHref` in `content.js` to a
+      public repo or notebook URL and a "View code ↗" link appears on that
+      card automatically.
+- [x] **Favicon.** Done — a modern "GG" monogram in a gradient circle
+      (`public/favicon.svg`).
+
 ## Development
 
 ```bash

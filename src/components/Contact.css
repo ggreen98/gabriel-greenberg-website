@@ -10,6 +10,28 @@
   margin-bottom: 1rem;
 }
 
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  padding: 0.5em 0.9em;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+}
+
+.availability-badge__dot {
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: var(--verdigris);
+  flex-shrink: 0;
+}
+
 .contact__blurb {
   max-width: 30rem;
   color: rgba(var(--text-rgb), 0.78);
