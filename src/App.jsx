@@ -1,3 +1,4 @@
+import HexGrid from './components/HexGrid';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -11,6 +12,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
+      <HexGrid />
       <Nav />
       <main>
         <Hero />

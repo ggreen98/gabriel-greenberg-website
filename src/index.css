@@ -92,16 +92,7 @@ body {
   position: relative;
 }
 
-/* Dot-grid texture overlay — remove this whole rule to revert. */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  pointer-events: none;
-  background-image: radial-gradient(circle, rgba(var(--text-rgb), 0.06) 1px, transparent 1.7px);
-  background-size: 22px 22px;
-}
+/* Hex-grid background texture now lives in the HexGrid canvas component. */
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
