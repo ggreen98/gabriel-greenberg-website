@@ -103,6 +103,10 @@ export default function HexGrid() {
       grad.addColorStop(0, `rgba(${emberRGB}, 0.85)`);
       grad.addColorStop(1, `rgba(${emberRGB}, 0)`);
 
+      ctx.save();
+      ctx.shadowColor = `rgba(${emberRGB}, 0.9)`;
+      ctx.shadowBlur = 6;
+
       ctx.beginPath();
       nearby.forEach(([x, y]) => tracePath(ctx, hexVertices(x, y)));
       ctx.strokeStyle = grad;
@@ -118,6 +122,7 @@ export default function HexGrid() {
       });
       ctx.fillStyle = grad;
       ctx.fill();
+      ctx.restore();
     }
 
     function resize() {
@@ -179,8 +184,9 @@ export default function HexGrid() {
       style={{
         position: 'fixed',
         inset: 0,
-        zIndex: 999,
+        zIndex: -1,
         pointerEvents: 'none',
+        filter: 'blur(1.3px)',
       }}
     />
   );
