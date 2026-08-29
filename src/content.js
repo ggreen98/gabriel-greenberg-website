@@ -23,7 +23,7 @@ export const skills = [
 export const about = {
   paragraphs: [
     "I started in the lab — running gas chromatography on air samples collected from around the world, learning to read a chromatogram before I ever wrote a line of Python. That instinct is still how I work: form a hypothesis, test it against evidence, and don't trust a result until it replicates.",
-    "I hold a Master's in Data Science (4.0 GPA, University of Wisconsin–Eau Claire) built on a chemistry foundation from Quest University Canada. For the past several years I've worked as a data scientist analyzing greenhouse gases and atmospheric pollutants — building the data pipelines, statistical models, and dashboards that turn raw sensor data into published, peer-reviewed research.",
+    "I hold a bachelor's degree in chemistry from Quest University Canada and a master's degree in data science (4.0 GPA) from the University of Wisconsin–Eau Claire. For the past several years I've worked as a data scientist analyzing greenhouse gases and atmospheric pollutants — building the data pipelines, statistical models, and dashboards that turn raw sensor data into published, peer-reviewed research.",
     "Outside of that, I shoot photography and build web software — different instruments, same habit of paying close attention.",
   ],
 };
@@ -60,7 +60,7 @@ export const experience = [
   },
   {
     range: '2025',
-    role: "M.S., Data Science — GPA 4.0",
+    role: "Master's Degree, Data Science — GPA 4.0",
     org: 'University of Wisconsin–Eau Claire',
     bullets: [
       'Coursework: machine learning & data mining, big data / high-performance computing, statistical methods, data visualization, prescriptive analytics.',
@@ -68,7 +68,7 @@ export const experience = [
   },
   {
     range: '2020',
-    role: 'B.A.Sc., Chemistry',
+    role: "Bachelor's Degree, Chemistry",
     org: 'Quest University Canada',
     bullets: [],
   },
