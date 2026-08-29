@@ -60,3 +60,52 @@
     gap: 0.5rem;
   }
 }
+
+.experience__publications {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.experience__pub-heading {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.experience__publications ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.experience__publications a {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.experience__publications a:hover {
+  color: var(--cobalt);
+  border-bottom-color: var(--cobalt);
+}
+
+.experience__pub-journal {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-style: italic;
+}

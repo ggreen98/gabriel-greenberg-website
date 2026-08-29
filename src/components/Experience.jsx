@@ -1,4 +1,4 @@
-import { experience } from '../content';
+import { experience, publications } from '../content';
 import Eyebrow from './Eyebrow';
 import Reveal from './Reveal';
 import './Experience.css';
@@ -30,6 +30,20 @@ export default function Experience() {
             </Reveal>
           ))}
         </ol>
+
+        <Reveal className="experience__publications">
+          <h3 className="experience__pub-heading">Peer-reviewed publications</h3>
+          <ul>
+            {publications.map((pub) => (
+              <li key={pub.href}>
+                <a href={pub.href} target="_blank" rel="noreferrer">
+                  {pub.citation}
+                </a>
+                <span className="experience__pub-journal">{pub.journal}</span>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </div>
     </section>
   );

@@ -25,9 +25,9 @@ export default function Hero() {
         </p>
 
         <p className="hero__blurb">
-          {site.title} with a chemistry background, working independently as{' '}
-          {site.llc}. I bring lab-grade rigor to messy data — forming a hypothesis,
-          testing it, and trusting nothing until it replicates.
+          {site.title} analyzing greenhouse gases and atmospheric pollutants, with a
+          chemistry background and an M.S. in Data Science. I also take on independent
+          analytics and web projects through {site.llc}.
         </p>
 
         <div className="hero__actions">

@@ -1,12 +1,11 @@
-// Placeholder content — edit these values with your real details.
-// This is the only file you should need to touch to update copy.
+// Content — most of this is now real. Remaining placeholders are marked.
 
 export const site = {
   name: 'Gabriel Greenberg',
   llc: 'Gabriel Greenberg L.L.C.',
   title: 'Data Scientist',
-  subtitle: 'Chemistry-trained. Data-focused. Independent contractor.',
-  email: 'gabrielgreenbergwork@gmail.com',
+  subtitle: 'Chemistry-trained. Data-focused.',
+  email: 'gabriel.jwgreenberg@gmail.com',
   linkedin: 'https://linkedin.com/in/your-handle', // placeholder — update with your real URL
   github: 'https://github.com/your-handle', // placeholder — update with your real URL
   resumeHref: '#', // placeholder — link to a hosted resume PDF
@@ -14,78 +13,109 @@ export const site = {
 
 export const skills = [
   { symbol: 'Py', name: 'Python' },
-  { symbol: 'SQL', name: 'Databases' },
+  { symbol: 'R', name: 'R' },
+  { symbol: 'SQL', name: 'SQL' },
   { symbol: 'ML', name: 'Machine Learning' },
   { symbol: 'St', name: 'Statistics' },
-  { symbol: 'Ac', name: 'Analytical Chemistry' },
-  { symbol: 'Vz', name: 'Data Visualization' },
+  { symbol: 'Ac', name: 'Atmospheric Chemistry' },
 ];
 
 export const about = {
   paragraphs: [
-    "I started in the lab — running reactions, reading spectra, and learning not to trust a result until it replicated. That instinct is still how I work: form a hypothesis, test it against evidence, and let the data argue back.",
-    "Today I apply the same rigor to messier, less controlled datasets. I'm currently working independently through Gabriel Greenberg L.L.C., partnering with teams who need someone to turn raw data into a decision they can defend.",
-    "Outside client work, I shoot photography and build web software — different instruments, same habit of paying close attention.",
+    "I started in the lab — running gas chromatography on air samples collected from around the world, learning to read a chromatogram before I ever wrote a line of Python. That instinct is still how I work: form a hypothesis, test it against evidence, and don't trust a result until it replicates.",
+    "I hold a Master's in Data Science (4.0 GPA, University of Wisconsin–Eau Claire) built on a chemistry foundation from Quest University Canada. For the past several years I've worked as a data scientist analyzing greenhouse gases and atmospheric pollutants — building the data pipelines, statistical models, and dashboards that turn raw sensor data into published, peer-reviewed research.",
+    "Outside of that, I shoot photography and build web software — different instruments, same habit of paying close attention.",
   ],
 };
 
 export const experience = [
   {
-    range: '2023 — Present',
-    role: 'Independent Data Science Contractor',
-    org: 'Gabriel Greenberg L.L.C.',
+    range: '2020 — Present',
+    role: 'Data Scientist',
+    org: 'Boulder A.I.R.',
     bullets: [
-      'Deliver end-to-end analytics engagements: data pipelines, statistical modeling, and stakeholder-facing dashboards.',
-      'Work across clients as an embedded analyst — scoping the question before touching the data.',
+      'Five years analyzing greenhouse gases and atmospheric pollutants using Python and R for research and operational pipelines.',
+      'Own data quality control, aggregation, and sharing across the full pipeline — from raw sensor data to exploratory analysis, modeling, and visualization.',
+      'Build and maintain dashboards and internal tooling; automate recurring data pipelines.',
+      'Co-authored 3 peer-reviewed publications on air quality and atmospheric chemistry (see below).',
     ],
   },
   {
-    range: '2021 — 2023',
-    role: 'Data Analyst',
-    org: 'Placeholder Company',
+    range: '2019 — 2020',
+    role: 'Research Assistant',
+    org: 'Quest University Canada',
     bullets: [
-      'Built recurring reporting and ad-hoc analyses that shaped product and operations decisions.',
-      'Owned SQL data models feeding internal dashboards.',
+      'Studied experiential, interdisciplinary learning in chemistry through development of a forensic geochemistry course.',
+      'Tested laboratory experiments and authored a lab manual for a future university course.',
     ],
   },
   {
-    range: '2019 — 2021',
-    role: 'Research Chemist',
-    org: 'Placeholder Laboratory',
+    range: 'Summer 2019',
+    role: 'Research Intern',
+    org: 'University of Colorado — Institute of Arctic and Alpine Research',
     bullets: [
-      'Designed and ran experiments; built the habit of treating every result as provisional until reproduced.',
-      'Analyzed instrument data (spectroscopy/chromatography) — the root of a later move into data science.',
+      "Trained to run, read, and interpret FID gas chromatography data to determine non-methane VOC concentrations in global flask samples, for INSTAAR's global VOC monitoring program.",
+      'Wrote Python to plot and interpret trends in the resulting data.',
     ],
   },
   {
-    range: '2015 — 2019',
-    role: 'B.S., Chemistry',
-    org: 'Placeholder University',
+    range: '2025',
+    role: "M.S., Data Science — GPA 4.0",
+    org: 'University of Wisconsin–Eau Claire',
+    bullets: [
+      'Coursework: machine learning & data mining, big data / high-performance computing, statistical methods, data visualization, prescriptive analytics.',
+    ],
+  },
+  {
+    range: '2020',
+    role: 'B.A.Sc., Chemistry',
+    org: 'Quest University Canada',
     bullets: [],
+  },
+];
+
+export const publications = [
+  {
+    citation:
+      'Caputi, D., Helmig, D., Darby, L.S., Greenberg, G., Hueber, J., Simoncic, S., Ortega, J. (2025). Late winter ozone and PM2.5 NAAQS exceedance in the Northern Colorado Front Range in relation to oil and natural gas emissions.',
+    journal: 'J. Geophys. Res. Atmos. 130, e2024JD041862',
+    href: 'https://doi.org/10.1029/2024JD041862',
+  },
+  {
+    citation:
+      'Helmig, D., Greenberg, G., Hueber, J., Blanchard, B., Chopra, J., Simoncic, S., Angot, H., Darby, L.S., Ortega, J., Caputi, D. (2025). Methane and volatile organic compounds and their influence on air quality in Boulder, Colorado.',
+    journal: 'Elem. Sci. Anth. 13, 00117',
+    href: 'https://doi.org/10.1525/elementa.2023.00117',
+  },
+  {
+    citation:
+      'Helmig, D., Nobel, J., Caputi, D., Brown, D., Daly, R.W., Darby, L.S., Doe, P.T., Gonzalez, O., Greenberg, G., Hueber, J., Potter, K., Schade, G.W., Simoncic, S., Stahli, M., Subra, W. (2024). Elevated airborne radioactivity downwind of a Colorado oil refinery.',
+    journal: 'J. Air Waste Manag. Assoc. 74, 920–931',
+    href: 'https://doi.org/10.1080/10962247.2024.2393194',
   },
 ];
 
 export const projects = [
   {
-    title: 'Reaction Yield Predictor',
+    title: 'VOC Trend Analysis Pipeline',
     description:
-      'A machine learning model that predicts chemical reaction yield from reagent and condition features — a direct bridge between the lab and the model.',
-    tags: ['Python', 'scikit-learn', 'Chemistry'],
-    href: '#',
+      'A Python pipeline that processes FID gas chromatography data from global flask samples, quantifying and plotting trends in non-methane volatile organic compounds.',
+    tags: ['Python', 'Atmospheric Chemistry', 'GC-FID'],
+    href: '#', // placeholder — link to a write-up or repo
   },
   {
-    title: 'Customer Churn Dashboard',
+    title: 'Greenhouse Gas Monitoring Dashboard',
     description:
-      'An interactive dashboard surfacing churn risk from usage data, with a SQL data model feeding live visualizations for a non-technical audience.',
-    tags: ['SQL', 'Python', 'Dashboards'],
-    href: '#',
+      "An operational dashboard for Boulder A.I.R.'s air quality monitoring network — data quality control, aggregation, and visualization for a research and public audience.",
+    tags: ['Python', 'Dashboards', 'Data QC'],
+    href: '#', // placeholder — link to a write-up or repo
   },
   {
-    title: 'Spectral Classification Pipeline',
+    title: 'Air Quality Modeling',
     description:
-      'A classification pipeline for spectroscopy data, comparing feature-engineered baselines against learned representations.',
-    tags: ['ML', 'Signal Processing'],
-    href: '#',
+      'Statistical and machine learning models relating pollutant concentrations (ozone, PM2.5, VOCs) to emissions sources, supporting peer-reviewed research.',
+    tags: ['R', 'Statistical Modeling', 'ML'],
+    href: '#', // placeholder — link to a write-up or repo
   },
 ];
 
