@@ -31,10 +31,10 @@ export default function Hero() {
         </p>
 
         <div className="hero__actions">
-          <a className="btn" href={site.resumeHref}>
+          <a className="btn ghost" href={site.resumeHref}>
             View résumé
           </a>
-          <a className="btn ghost" href="#contact">
+          <a className="btn" href="#contact">
             Get in touch
           </a>
         </div>
