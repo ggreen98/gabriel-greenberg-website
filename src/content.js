@@ -9,6 +9,7 @@ export const site = {
   linkedin: 'https://linkedin.com/in/your-handle', // placeholder — update with your real URL
   github: 'https://github.com/your-handle', // placeholder — update with your real URL
   resumeHref: '#', // placeholder — link to a hosted resume PDF
+  formEndpoint: 'https://formspree.io/f/your-form-id', // placeholder — replace with your Formspree endpoint (see README)
 };
 
 export const skills = [
