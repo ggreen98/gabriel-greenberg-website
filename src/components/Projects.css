@@ -30,7 +30,7 @@
 .project-card:hover {
   border-color: var(--cobalt-bright);
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px -18px rgba(27, 31, 35, 0.35);
+  box-shadow: 0 12px 28px -18px rgba(var(--text-rgb), 0.35);
 }
 
 .project-card h3 {
@@ -40,7 +40,7 @@
 
 .project-card p {
   font-size: 0.95rem;
-  color: rgba(27, 31, 35, 0.78);
+  color: rgba(var(--text-rgb), 0.78);
   margin-bottom: 1.25rem;
 }
 

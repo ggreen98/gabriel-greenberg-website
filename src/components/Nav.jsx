@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import ThemeToggle from './ThemeToggle';
 import './Nav.css';
 
 const links = [
@@ -35,15 +36,19 @@ export default function Nav() {
           ))}
         </nav>
 
-        <button
-          className="nav__toggle"
-          aria-expanded={open}
-          aria-label="Toggle menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span />
-          <span />
-        </button>
+        <div className="nav__right">
+          <ThemeToggle />
+
+          <button
+            className="nav__toggle"
+            aria-expanded={open}
+            aria-label="Toggle menu"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span />
+            <span />
+          </button>
+        </div>
       </div>
 
       {open && (

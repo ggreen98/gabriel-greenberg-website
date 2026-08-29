@@ -14,7 +14,7 @@
 .element-tile:hover {
   transform: translateY(-3px);
   border-color: var(--cobalt-bright);
-  background: #ffffff;
+  background: var(--panel-hover);
 }
 
 .element-tile__index {

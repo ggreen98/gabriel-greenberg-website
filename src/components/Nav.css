@@ -10,7 +10,7 @@
 }
 
 .nav--scrolled {
-  background: rgba(245, 246, 241, 0.88);
+  background: rgba(var(--bg-rgb), 0.88);
   backdrop-filter: blur(8px);
   border-bottom-color: var(--line);
 }
@@ -71,6 +71,37 @@
 
 .nav__links a:hover::after {
   right: 0;
+}
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--cobalt-bright);
+  color: var(--cobalt-bright);
+  transform: translateY(-1px);
+}
+
+.theme-toggle svg {
+  width: 1.15rem;
+  height: 1.15rem;
 }
 
 .nav__toggle {

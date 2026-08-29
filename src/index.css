@@ -11,6 +11,9 @@
   --verdigris-dim: #e7efec;
   --line: rgba(27, 31, 35, 0.14);
   --muted: rgba(27, 31, 35, 0.6);
+  --text-rgb: 27, 31, 35;
+  --bg-rgb: 245, 246, 241;
+  --panel-hover: #ffffff;
 
   --font-display: 'Fraunces', 'Iowan Old Style', serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -18,6 +21,41 @@
 
   --max-width: 1120px;
   --edge: clamp(1.5rem, 5vw, 4rem);
+}
+
+/* Dark palette — follows system preference unless overridden by the toggle */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --ink: #f3f4ef;
+    --paper: #14171a;
+    --paper-dim: #1b1f23;
+    --cobalt: #6bb0dd;
+    --cobalt-bright: #8fc7ea;
+    --pink: #f17ba8;
+    --verdigris: #7fc0ad;
+    --verdigris-dim: #1b2622;
+    --line: rgba(243, 244, 239, 0.16);
+    --muted: rgba(243, 244, 239, 0.6);
+    --text-rgb: 243, 244, 239;
+    --bg-rgb: 20, 23, 26;
+    --panel-hover: #20252b;
+  }
+}
+
+:root[data-theme='dark'] {
+  --ink: #f3f4ef;
+  --paper: #14171a;
+  --paper-dim: #1b1f23;
+  --cobalt: #6bb0dd;
+  --cobalt-bright: #8fc7ea;
+  --pink: #f17ba8;
+  --verdigris: #7fc0ad;
+  --verdigris-dim: #1b2622;
+  --line: rgba(243, 244, 239, 0.16);
+  --muted: rgba(243, 244, 239, 0.6);
+  --text-rgb: 243, 244, 239;
+  --bg-rgb: 20, 23, 26;
+  --panel-hover: #20252b;
 }
 
 * {
@@ -50,6 +88,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 h1, h2, h3, h4 {
