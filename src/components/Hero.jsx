@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section id="top" className="hero">
       <div className="section-inner hero__inner">
-        <p className="hero__eyebrow">Chemistry — Data — Insight</p>
+        <p className="hero__eyebrow">Chemistry · Data · Insight</p>
 
         <h1 className="hero__name">{site.name}</h1>
 

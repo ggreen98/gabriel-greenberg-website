@@ -33,7 +33,7 @@ export default function ContactForm() {
   if (status === 'success') {
     return (
       <div className="contact-form contact-form--done">
-        <p>Message sent — I'll get back to you soon.</p>
+        <p>Message sent. I'll get back to you soon.</p>
       </div>
     );
   }
@@ -42,7 +42,7 @@ export default function ContactForm() {
     <form className="contact-form" onSubmit={handleSubmit}>
       {!isConfigured && (
         <p className="contact-form__notice">
-          Form endpoint not yet configured — see README for setup.
+          Form endpoint not yet configured. See README for setup.
         </p>
       )}
 
@@ -69,7 +69,7 @@ export default function ContactForm() {
       </button>
 
       {status === 'error' && (
-        <p className="contact-form__error">Something went wrong — try again, or email me directly.</p>
+        <p className="contact-form__error">Something went wrong. Try again, or email me directly.</p>
       )}
     </form>
   );

@@ -10,7 +10,7 @@ export const site = {
   github: 'https://github.com/your-handle', // placeholder — update with your real URL
   resumeHref: '#', // placeholder — link to a hosted resume PDF
   formEndpoint: 'https://formspree.io/f/your-form-id', // placeholder — replace with your Formspree endpoint (see README)
-  availability: 'Based in Boulder, Colorado. Open to in-office, hybrid, or remote — along the Front Range or abroad.', // placeholder — set what you're actually looking for
+  availability: 'Based in Boulder, Colorado. Open to in-office, hybrid, or remote work along the Front Range or abroad.', // placeholder — set what you're actually looking for
 };
 
 // A short third-party quote (former manager, collaborator, client). Set
@@ -32,26 +32,26 @@ export const skills = [
 
 export const about = {
   paragraphs: [
-    "I started in the lab — running gas chromatography on air samples collected from around the world, learning to read a chromatogram before I ever wrote a line of Python. That instinct is still how I work: form a hypothesis, test it against evidence, and don't trust a result until it replicates.",
-    "I hold a bachelor's degree in chemistry from Quest University Canada and a master's degree in data science (4.0 GPA) from the University of Wisconsin–Eau Claire. For the past several years I've worked as a data scientist analyzing greenhouse gases and atmospheric pollutants — building the data pipelines, statistical models, and dashboards that turn raw sensor data into published, peer-reviewed research.",
-    "Outside of that, I shoot photography and build web software — different instruments, same habit of paying close attention.",
+    "I started in the lab, running gas chromatography on air samples collected from around the world, learning to read a chromatogram before I ever wrote a line of Python. That instinct is still how I work: form a hypothesis, test it against evidence, and don't trust a result until it replicates.",
+    "I hold a bachelor's degree in chemistry from Quest University Canada and a master's degree in data science (4.0 GPA) from the University of Wisconsin–Eau Claire. For the past several years I've worked as a data scientist analyzing greenhouse gases and atmospheric pollutants, building the data pipelines, statistical models, and dashboards that turn raw sensor data into published, peer-reviewed research.",
+    "Outside of that, I shoot photography and build web software. Different instruments, same habit of paying close attention.",
   ],
 };
 
 export const experience = [
   {
-    range: '2020 — Present',
+    range: '2020–Present',
     role: 'Data Scientist',
     org: 'Boulder A.I.R.',
     bullets: [
       'Five years analyzing greenhouse gases and atmospheric pollutants using Python and R for research and operational pipelines.',
-      'Own data quality control, aggregation, and sharing across the full pipeline — from raw sensor data to exploratory analysis, modeling, and visualization.',
+      'Own data quality control, aggregation, and sharing across the full pipeline, from raw sensor data to exploratory analysis, modeling, and visualization.',
       'Build and maintain dashboards and internal tooling; automate recurring data pipelines.',
       'Co-authored 3 peer-reviewed publications on air quality and atmospheric chemistry (see below).',
     ],
   },
   {
-    range: '2019 — 2020',
+    range: '2019–2020',
     role: 'Research Assistant',
     org: 'Quest University Canada',
     bullets: [
@@ -62,7 +62,7 @@ export const experience = [
   {
     range: 'Summer 2019',
     role: 'Research Intern',
-    org: 'University of Colorado — Institute of Arctic and Alpine Research',
+    org: 'University of Colorado (Institute of Arctic and Alpine Research)',
     bullets: [
       "Trained to run, read, and interpret FID gas chromatography data to determine non-methane VOC concentrations in global flask samples, for INSTAAR's global VOC monitoring program.",
       'Wrote Python to plot and interpret trends in the resulting data.',
@@ -70,7 +70,7 @@ export const experience = [
   },
   {
     range: '2025',
-    role: "Master's Degree, Data Science — GPA 4.0",
+    role: "Master's Degree, Data Science (GPA 4.0)",
     org: 'University of Wisconsin–Eau Claire',
     bullets: [
       'Coursework: machine learning & data mining, big data / high-performance computing, statistical methods, data visualization, prescriptive analytics.',
@@ -122,7 +122,7 @@ export const projects = [
   {
     title: 'Greenhouse Gas Monitoring Dashboard',
     description:
-      "An operational dashboard for Boulder A.I.R.'s air quality monitoring network — data quality control, aggregation, and visualization for a research and public audience.",
+      "An operational dashboard for Boulder A.I.R.'s air quality monitoring network, covering data quality control, aggregation, and visualization for a research and public audience.",
     tags: ['Python', 'Dashboards', 'Data QC'],
     href: '#', // placeholder — link to a write-up or repo
     codeHref: '',
