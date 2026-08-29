@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 const SIZE = 15; // hexagon circumradius in px
 const HEX_W = Math.sqrt(3) * SIZE; // horizontal spacing between column centers
 const ROW_H = 1.5 * SIZE; // vertical spacing between rows
-const GLOW_RADIUS = 170; // how far the cursor glow reaches before fading to nothing
+const GLOW_RADIUS = 95; // how far the cursor glow reaches before fading to nothing
 
 function hexVertices(cx, cy) {
   const pts = [];
@@ -69,7 +69,7 @@ export default function HexGrid() {
           tracePath(gridCtx, hexVertices(x, y));
         }
       }
-      gridCtx.strokeStyle = `rgba(${lineRGB}, 0.035)`;
+      gridCtx.strokeStyle = `rgba(${lineRGB}, 0.012)`;
       gridCtx.lineWidth = 1;
       gridCtx.stroke();
 
@@ -80,7 +80,7 @@ export default function HexGrid() {
           gridCtx.arc(vx, vy, 1, 0, Math.PI * 2);
         });
       });
-      gridCtx.fillStyle = `rgba(${lineRGB}, 0.08)`;
+      gridCtx.fillStyle = `rgba(${lineRGB}, 0.02)`;
       gridCtx.fill();
 
       centersRef.current = centers;
@@ -186,7 +186,6 @@ export default function HexGrid() {
         inset: 0,
         zIndex: -1,
         pointerEvents: 'none',
-        filter: 'blur(1.3px)',
       }}
     />
   );
