@@ -10,7 +10,7 @@ export const site = {
   github: 'https://github.com/your-handle', // placeholder — update with your real URL
   resumeHref: '#', // placeholder — link to a hosted resume PDF
   formEndpoint: 'https://formspree.io/f/your-form-id', // placeholder — replace with your Formspree endpoint (see README)
-  availability: 'Open to full-time and contract data science roles — based in Boulder, CO, open to remote.', // placeholder — set what you're actually looking for
+  availability: 'Open to in-office, hybrid, or remote — along the Front Range or abroad.', // placeholder — set what you're actually looking for
 };
 
 // A short third-party quote (former manager, collaborator, client). Set

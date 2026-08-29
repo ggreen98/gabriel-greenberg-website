@@ -25,11 +25,13 @@
 }
 
 .availability-badge__dot {
-  width: 0.5em;
-  height: 0.5em;
+  display: block;
+  width: 7px;
+  height: 7px;
+  min-width: 7px;
   border-radius: 50%;
   background: var(--verdigris);
-  flex-shrink: 0;
+  flex: none;
 }
 
 .contact__blurb {
