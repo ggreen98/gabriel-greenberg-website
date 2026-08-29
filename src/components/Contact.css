@@ -11,17 +11,16 @@
 }
 
 .availability-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55em;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65em;
+  max-width: 30rem;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   letter-spacing: 0.01em;
-  color: var(--ink);
-  padding: 0.5em 0.9em;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-bottom: 1.75rem;
 }
 
 .availability-badge__dot {
@@ -29,6 +28,7 @@
   width: 7px;
   height: 7px;
   min-width: 7px;
+  margin-top: 0.5em;
   border-radius: 50%;
   background: var(--verdigris);
   flex: none;
