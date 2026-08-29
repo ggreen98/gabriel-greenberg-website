@@ -14,6 +14,7 @@
   --text-rgb: 27, 31, 35;
   --bg-rgb: 245, 246, 241;
   --panel-hover: #ffffff;
+  --ember: #c9822b;
 
   --font-display: 'Fraunces', 'Iowan Old Style', serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -39,6 +40,7 @@
     --text-rgb: 243, 244, 239;
     --bg-rgb: 20, 23, 26;
     --panel-hover: #20252b;
+    --ember: #f2b656;
   }
 }
 
@@ -56,6 +58,7 @@
   --text-rgb: 243, 244, 239;
   --bg-rgb: 20, 23, 26;
   --panel-hover: #20252b;
+  --ember: #f2b656;
 }
 
 * {

@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 const SIZE = 15; // hexagon circumradius in px
 const HEX_W = Math.sqrt(3) * SIZE; // horizontal spacing between column centers
 const ROW_H = 1.5 * SIZE; // vertical spacing between rows
+const GLOW_RADIUS = 170; // how far the cursor glow reaches before fading to nothing
 
 function hexVertices(cx, cy) {
   const pts = [];
@@ -21,6 +22,12 @@ function tracePath(ctx, pts) {
 function readVar(varName, fallback) {
   const v = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
   return v || fallback;
+}
+
+function hexToRgb(hex) {
+  const m = /^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(hex);
+  if (!m) return '242, 182, 86';
+  return [1, 2, 3].map((i) => parseInt(m[i], 16)).join(', ');
 }
 
 export default function HexGrid() {
@@ -62,7 +69,7 @@ export default function HexGrid() {
           tracePath(gridCtx, hexVertices(x, y));
         }
       }
-      gridCtx.strokeStyle = `rgba(${lineRGB}, 0.05)`;
+      gridCtx.strokeStyle = `rgba(${lineRGB}, 0.035)`;
       gridCtx.lineWidth = 1;
       gridCtx.stroke();
 
@@ -73,7 +80,7 @@ export default function HexGrid() {
           gridCtx.arc(vx, vy, 1, 0, Math.PI * 2);
         });
       });
-      gridCtx.fillStyle = `rgba(${lineRGB}, 0.12)`;
+      gridCtx.fillStyle = `rgba(${lineRGB}, 0.08)`;
       gridCtx.fill();
 
       centersRef.current = centers;
@@ -85,23 +92,32 @@ export default function HexGrid() {
       ctx.drawImage(gridLayer, 0, 0, width, height);
 
       const { x: mx, y: my } = mouse.current;
-      let nearest = null;
-      let nearestDist = Infinity;
-      centersRef.current.forEach(([x, y]) => {
-        const d = Math.hypot(x - mx, y - my);
-        if (d < nearestDist) {
-          nearestDist = d;
-          nearest = [x, y];
-        }
-      });
+      if (mx < -1000) return;
 
-      if (nearest && nearestDist < SIZE * 1.3) {
-        const tintHex = readVar('--cobalt-bright', '#2f74a3');
-        ctx.beginPath();
-        tracePath(ctx, hexVertices(nearest[0], nearest[1]));
-        ctx.fillStyle = `${tintHex}22`;
-        ctx.fill();
-      }
+      const reach = GLOW_RADIUS + SIZE;
+      const nearby = centersRef.current.filter(([x, y]) => Math.hypot(x - mx, y - my) < reach);
+      if (nearby.length === 0) return;
+
+      const emberRGB = hexToRgb(readVar('--ember', '#f2b656'));
+      const grad = ctx.createRadialGradient(mx, my, 0, mx, my, GLOW_RADIUS);
+      grad.addColorStop(0, `rgba(${emberRGB}, 0.85)`);
+      grad.addColorStop(1, `rgba(${emberRGB}, 0)`);
+
+      ctx.beginPath();
+      nearby.forEach(([x, y]) => tracePath(ctx, hexVertices(x, y)));
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = 1.1;
+      ctx.stroke();
+
+      ctx.beginPath();
+      nearby.forEach(([x, y]) => {
+        hexVertices(x, y).forEach(([vx, vy]) => {
+          ctx.moveTo(vx + 1.4, vy);
+          ctx.arc(vx, vy, 1.4, 0, Math.PI * 2);
+        });
+      });
+      ctx.fillStyle = grad;
+      ctx.fill();
     }
 
     function resize() {
