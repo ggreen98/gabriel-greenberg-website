@@ -1,0 +1,103 @@
+.hero {
+  padding: clamp(7rem, 16vw, 11rem) var(--edge) clamp(4rem, 8vw, 6rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 46rem;
+  height: 46rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(30, 76, 107, 0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+
+.hero__name {
+  font-size: clamp(2.75rem, 7vw, 5rem);
+  margin-bottom: 0.75rem;
+  animation: rise 0.8s ease both;
+}
+
+.hero__equation {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  color: var(--cobalt);
+  margin-bottom: 2rem;
+  animation: rise 0.8s ease 0.1s both;
+}
+
+.hero__equation svg {
+  width: 1.9em;
+  height: 0.9em;
+  color: var(--pink);
+}
+
+.hero__equation-highlight {
+  color: var(--pink);
+  font-weight: 600;
+}
+
+.hero__blurb {
+  max-width: 40rem;
+  font-size: 1.1rem;
+  color: rgba(27, 31, 35, 0.82);
+  margin-bottom: 2.5rem;
+  animation: rise 0.8s ease 0.18s both;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+  animation: rise 0.8s ease 0.26s both;
+}
+
+.hero__tiles {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  animation: rise 0.8s ease 0.34s both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__name,
+  .hero__equation,
+  .hero__blurb,
+  .hero__actions,
+  .hero__tiles {
+    animation: none;
+  }
+}

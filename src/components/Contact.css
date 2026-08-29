@@ -1,0 +1,21 @@
+.contact {
+  text-align: left;
+}
+
+.contact__heading {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.contact__blurb {
+  max-width: 32rem;
+  color: rgba(27, 31, 35, 0.78);
+  font-size: 1.05rem;
+  margin-bottom: 2.25rem;
+}
+
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
