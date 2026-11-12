@@ -1,8 +1,15 @@
+import { useState } from 'react';
 import { site, skills } from '../content';
 import ElementTile from './ElementTile';
 import './Hero.css';
 
 export default function Hero() {
+  // Hover/focus previews a skill; clicking pins it so it stays open (and
+  // works on touch, where there is no hover).
+  const [hovered, setHovered] = useState(null);
+  const [pinned, setPinned] = useState(null);
+  const shown = skills.find((s) => s.symbol === (hovered ?? pinned));
+
   return (
     <section id="top" className="hero">
       <div className="section-inner hero__inner">
@@ -25,9 +32,11 @@ export default function Hero() {
         </p>
 
         <p className="hero__blurb">
-          {site.title} analyzing greenhouse gases and atmospheric pollutants, with a
-          bachelor's degree in chemistry and a master's degree in data science. I also
-          take on independent analytics and web projects through {site.llc}.
+          I build data pipelines, models, and visualizations that turn raw sensor data
+          into research-grade results. My current work is primary research on ozone and
+          other tropospheric pollutants, backed by a chemistry degree and a master's in
+          data science. I also take on independent analytics and web projects through{' '}
+          {site.llc}
         </p>
 
         <div className="hero__actions">
@@ -39,10 +48,50 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="hero__tiles" role="list" aria-label="Core skills">
+        <p id="skills-label" className="hero__tiles-label">
+          Skills &amp; tools I've worked with
+        </p>
+
+        <div
+          className="hero__tiles"
+          role="group"
+          aria-labelledby="skills-label"
+          onMouseLeave={() => setHovered(null)}
+          onBlur={() => setHovered(null)}
+        >
           {skills.map((s, i) => (
-            <ElementTile key={s.symbol} index={i + 1} symbol={s.symbol} name={s.name} />
+            <ElementTile
+              key={s.symbol}
+              index={i + 1}
+              symbol={s.symbol}
+              name={s.name}
+              active={shown?.symbol === s.symbol}
+              pinned={pinned === s.symbol}
+              onPreview={() => setHovered(s.symbol)}
+              onToggle={() => {
+                // Clear the preview too, so a second tap closes it on touch.
+                if (pinned === s.symbol) setHovered(null);
+                setPinned(pinned === s.symbol ? null : s.symbol);
+              }}
+            />
           ))}
+        </div>
+
+        <div id="skill-detail" className="hero__detail" aria-live="polite">
+          {shown ? (
+            <>
+              <span className="hero__detail-name">{shown.name}</span>
+              {shown.details?.length > 0 && (
+                <ul className="hero__detail-list">
+                  {shown.details.map((d) => (
+                    <li key={d}>{d}</li>
+                  ))}
+                </ul>
+              )}
+            </>
+          ) : (
+            <span className="hero__detail-hint">Hover or tap an element for details.</span>
+          )}
         </div>
       </div>
     </section>

@@ -10,6 +10,14 @@ export default function About() {
         <Reveal className="about__intro">
           <Eyebrow from="Lab" to="Laptop" />
           <h2>About</h2>
+          <img
+            className="about__photo"
+            src="/gabriel-greenberg.webp"
+            alt="Gabriel Greenberg"
+            width="800"
+            height="1000"
+            loading="lazy"
+          />
         </Reveal>
 
         <div className="about__body">

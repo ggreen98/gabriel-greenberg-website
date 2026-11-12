@@ -2,16 +2,25 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 10.5rem;
+  height: 10.5rem;
   padding: 0.5rem 0.6rem;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--paper);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
-.element-tile:hover {
+.element-tile:focus-visible {
+  outline: 2px solid var(--cobalt-bright);
+  outline-offset: 2px;
+}
+
+.element-tile:hover,
+.element-tile.is-active {
   transform: translateY(-3px);
   border-color: var(--cobalt-bright);
   background: var(--panel-hover);
@@ -19,13 +28,13 @@
 
 .element-tile__index {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 1.125rem;
   color: var(--muted);
 }
 
 .element-tile__symbol {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   font-weight: 500;
   color: var(--cobalt);
   line-height: 1;
@@ -33,7 +42,8 @@
 
 .element-tile__name {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 1.125rem;
+  line-height: 1.2;
   letter-spacing: 0.01em;
   color: var(--ink);
 }

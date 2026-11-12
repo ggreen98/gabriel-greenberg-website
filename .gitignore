@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Source reports/drafts kept locally, not published
+*.docx
+Broomfield_Q2_2022_Supplements_sections_ABCDEFG.pdf

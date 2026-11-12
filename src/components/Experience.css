@@ -24,7 +24,7 @@
 
 .experience__date {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 1.125rem;
   color: var(--cobalt);
   padding-top: 0.2rem;
 }
@@ -36,9 +36,21 @@
 
 .experience__org {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 1.125rem;
   color: var(--muted);
   margin-bottom: 0.9rem;
+}
+
+.experience__org a {
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.experience__org a:hover {
+  color: var(--cobalt);
+  text-decoration-color: var(--cobalt);
 }
 
 .experience__content ul {
@@ -51,7 +63,7 @@
 
 .experience__content li {
   color: rgba(var(--text-rgb), 0.8);
-  font-size: 0.98rem;
+  font-size: 1.125rem;
 }
 
 @media (max-width: 640px) {
@@ -69,7 +81,7 @@
 
 .experience__pub-heading {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 1.125rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--muted);
@@ -88,7 +100,7 @@
 
 .experience__publications a {
   display: block;
-  font-size: 0.95rem;
+  font-size: 1.125rem;
   line-height: 1.5;
   color: var(--ink);
   text-decoration: none;
@@ -105,7 +117,7 @@
   display: block;
   margin-top: 0.35rem;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 1.125rem;
   color: var(--muted);
   font-style: italic;
 }

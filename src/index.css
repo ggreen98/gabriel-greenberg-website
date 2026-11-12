@@ -6,15 +6,15 @@
   --paper-dim: #eceee7;
   --cobalt: #1e4c6b;
   --cobalt-bright: #2f74a3;
-  --pink: #d6437b;
+  --pink: #bd5f7f;
   --verdigris: #4c8c7d;
   --verdigris-dim: #e7efec;
   --line: rgba(27, 31, 35, 0.14);
   --muted: rgba(27, 31, 35, 0.6);
   --text-rgb: 27, 31, 35;
   --bg-rgb: 245, 246, 241;
+  --star-rgb: 214, 118, 38; /* warm amber dots on light paper */
   --panel-hover: #ffffff;
-  --ember: #c9822b;
 
   --font-display: 'Fraunces', 'Iowan Old Style', serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -31,8 +31,9 @@
     --paper: #14171a;
     --paper-dim: #1b1f23;
     --cobalt: #6bb0dd;
+    --star-rgb: 107, 176, 221;
     --cobalt-bright: #8fc7ea;
-    --pink: #f17ba8;
+    --pink: #dc90ab;
     --verdigris: #7fc0ad;
     --verdigris-dim: #16212e;
     --line: rgba(243, 244, 239, 0.16);
@@ -40,7 +41,6 @@
     --text-rgb: 243, 244, 239;
     --bg-rgb: 20, 23, 26;
     --panel-hover: #20252b;
-    --ember: #f2b656;
   }
 }
 
@@ -49,8 +49,9 @@
   --paper: #14171a;
   --paper-dim: #1b1f23;
   --cobalt: #6bb0dd;
+  --star-rgb: 107, 176, 221;
   --cobalt-bright: #8fc7ea;
-  --pink: #f17ba8;
+  --pink: #dc90ab;
   --verdigris: #7fc0ad;
   --verdigris-dim: #16212e;
   --line: rgba(243, 244, 239, 0.16);
@@ -58,7 +59,6 @@
   --text-rgb: 243, 244, 239;
   --bg-rgb: 20, 23, 26;
   --panel-hover: #20252b;
-  --ember: #f2b656;
 }
 
 * {
@@ -88,14 +88,63 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.25s ease, color 0.25s ease;
   position: relative;
 }
 
-/* Hex-grid background texture now lives in the HexGrid canvas component. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 59;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 60% at 0% 0%, rgba(224, 122, 46, 0.07), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 100% 100%, rgba(47, 116, 163, 0.14), transparent 60%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) body::before {
+    background:
+      radial-gradient(ellipse 70% 60% at 0% 0%, rgba(224, 122, 46, 0.1), transparent 60%),
+      radial-gradient(ellipse 70% 60% at 100% 100%, rgba(47, 116, 163, 0.22), transparent 60%);
+  }
+}
+
+:root[data-theme='dark'] body::before {
+  background:
+    radial-gradient(ellipse 70% 60% at 0% 0%, rgba(224, 122, 46, 0.1), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 100% 100%, rgba(47, 116, 163, 0.22), transparent 60%);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.1;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='320'%20height='320'%3E%3Cfilter%20id='worn-paper'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.045'%20numOctaves='5'%20stitchTiles='stitch'%20result='noise'/%3E%3CfeColorMatrix%20in='noise'%20type='matrix'%20values='0.2%200.2%200.2%200%200.12%200.15%200.15%200.15%200%200.06%200.1%200.1%200.1%200%200%200%200%200%200%201'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23worn-paper)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 320px 320px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) body::after {
+    opacity: 0.14;
+    mix-blend-mode: soft-light;
+  }
+}
+
+:root[data-theme='dark'] body::after {
+  opacity: 0.14;
+  mix-blend-mode: soft-light;
+}
+
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
@@ -142,7 +191,7 @@ button {
   align-items: center;
   gap: 0.6em;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 1.125rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--cobalt);
@@ -192,7 +241,7 @@ button {
   align-items: center;
   gap: 0.5em;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 1.125rem;
   letter-spacing: 0.02em;
   padding: 0.85em 1.4em;
   border-radius: 3px;

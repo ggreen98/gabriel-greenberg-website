@@ -38,7 +38,7 @@
   border: 1px solid var(--ink);
   border-radius: 50%;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
@@ -51,7 +51,7 @@
 .nav__links a {
   text-decoration: none;
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 1.125rem;
   letter-spacing: 0.02em;
   color: var(--ink);
   position: relative;
@@ -132,7 +132,7 @@
 .nav__mobile a {
   text-decoration: none;
   font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-size: 1.125rem;
   color: var(--ink);
 }
 

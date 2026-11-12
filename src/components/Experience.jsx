@@ -18,7 +18,15 @@ export default function Experience() {
               <span className="experience__date">{entry.range}</span>
               <div className="experience__content">
                 <h3>{entry.role}</h3>
-                <p className="experience__org">{entry.org}</p>
+                <p className="experience__org">
+                  {entry.orgHref ? (
+                    <a href={entry.orgHref} target="_blank" rel="noreferrer">
+                      {entry.org}
+                    </a>
+                  ) : (
+                    entry.org
+                  )}
+                </p>
                 {entry.bullets.length > 0 && (
                   <ul>
                     {entry.bullets.map((b, j) => (

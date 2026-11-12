@@ -1,4 +1,4 @@
-import HexGrid from './components/HexGrid';
+import Starfield from './components/Starfield';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
-      <HexGrid />
+      <Starfield />
       <Nav />
       <main>
         <Hero />
