@@ -7,13 +7,14 @@
     <meta name="description" content="Gabriel Greenberg, Data Scientist with a chemistry background, available for data science and analytics work." />
     <title>Gabriel Greenberg, Data Scientist</title>
     <script>
+      // Dark is the default; a visitor's saved choice from the toggle wins.
       (function () {
+        var theme = 'dark';
         try {
           var stored = localStorage.getItem('theme');
-          if (stored === 'light' || stored === 'dark') {
-            document.documentElement.setAttribute('data-theme', stored);
-          }
+          if (stored === 'light' || stored === 'dark') theme = stored;
         } catch (e) {}
+        document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
   </head>

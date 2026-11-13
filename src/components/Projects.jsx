@@ -44,7 +44,7 @@ export default function Projects() {
               as="div"
               key={p.title}
               delay={i * 70}
-              className={`project-card${p.featured ? ' project-card--featured' : ''}`}
+              className={`project-card${p.featured ? ' project-card--featured' : ''}${p.wide ? ' project-card--wide' : ''}`}
             >
               {p.image && (
                 <a className="project-card__image" href={p.image.src} target="_blank" rel="noreferrer">

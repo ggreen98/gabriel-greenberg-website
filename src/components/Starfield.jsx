@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react';
 
 // A sparse field of tiny dots that drift slowly and twinkle, like particles
 // in still air. It sits behind all content and ignores the pointer.
-const AREA_PER_STAR = 9000; // px² of viewport per dot; higher = sparser
-const MAX_STARS = 260;
+const AREA_PER_STAR = 4500; // px² of viewport per dot; higher = sparser
+const MAX_STARS = 520;
 const SPARKLE_SHARE = 0.07; // fraction of dots that occasionally flash brighter
 
 // Reads an "r, g, b" triplet from a CSS variable (set per theme in index.css).

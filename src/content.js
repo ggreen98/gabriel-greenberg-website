@@ -8,7 +8,7 @@ export const site = {
   email: 'gabriel.jwgreenberg@gmail.com',
   linkedin: 'https://www.linkedin.com/in/gabe-greenberg-3604a31b7/',
   github: 'https://github.com/ggreen98',
-  resumeHref: '#', // placeholder — link to a hosted resume PDF
+  resumeHref: '/Gabriel_Greenberg_Resume.pdf',
   formEndpoint: 'https://formspree.io/f/mrpenjwv',
   availability: 'Based in Boulder, Colorado. Open to in-office, hybrid, or remote work along the Front Range or abroad.', // placeholder — set what you're actually looking for
 };
@@ -67,7 +67,7 @@ export const skills = [
   {
     symbol: 'Ac',
     name: 'Atmospheric Chemistry',
-    details: ['Greenhouse gases', 'Methane', 'Volatile organic compounds (VOCs)', 'Ozone', 'PM2.5', 'GC-FID'], // placeholder — confirm
+    details: ['Greenhouse gases', 'Methane', 'Volatile organic compounds (VOCs)', 'Ozone', 'PM2.5', 'GC-FID'],
   },
 ];
 
@@ -75,8 +75,8 @@ export const about = {
   paragraphs: [
     "I started out as a chemist, earning my degree at Quest University Canada and running gas chromatography on air samples collected from around the world. What hooked me was the puzzle: form a hypothesis, test it against the evidence, and question a result before trusting it, especially when it's the one I was hoping for.",
     "Programming turned out to be the same kind of puzzle. I had no coding experience when I started, so I taught myself on the job, before AI assistants made that easier. I learned it well enough to earn a place in a data science master's program at the University of Wisconsin–Eau Claire without a single undergraduate programming course, and I finished with a 4.0.",
-    "Since 2020 I've done primary research on ozone and other tropospheric pollutants at Boulder A.I.R., building the data pipelines, QC tools, statistical models, and libraries that turn raw sensor data into peer-reviewed results.",
-    "Computer science moves faster than any field I know. In a few years I've gone from scripts on one machine to containerized pipelines running across many, and now to AI tools that change how code gets written. I'm enough of a nerd that learning the next thing is the fun part. But new tools make critical thinking more important, not less: an AI can write code in seconds, and someone still has to know whether the answer is right. That's the part of the job I take most seriously.",
+    "Since 2020 I've done primary research on ozone and other tropospheric pollutants at Boulder A.I.R., building the data pipelines, QC tools, statistical models, and libraries that turn raw sensor data into peer-reviewed results. I want my work to matter: cleaner air, a more reliable energy system, and a clearer public picture of what we breathe.",
+    "Computer science moves faster than any field I know. In a few years I've gone from scripts on one machine to containerized pipelines running across many, and now to AI tools that change how code gets written. I'm enough of a nerd that learning the next stack, library, or technology is the fun part. But new tools make critical thinking more important, not less: an AI can write code in seconds, and someone still has to know whether the answer is right. That's the part of the job I take most seriously.",
     "Outside of work, I shoot photography, play guitar, and bake, which is really just chemistry you get to eat. Different instruments, same habit of paying close attention.",
   ],
 };
@@ -181,8 +181,12 @@ export const publications = [
 export const projects = [
   {
     title: 'Front Range Ozone Source Regions',
+    image: {
+      src: '/ozone-back-trajectories.webp',
+      alt: 'Map of the Northern Colorado Front Range from Fort Collins to Parker showing 12-hour back trajectories for the 100 highest-ozone hours at each of 14 monitoring sites, 2015 to 2025. Colored lines converge on each site from across the region.',
+    },
     description:
-      'First-author conference poster, built as an interactive web page, tracing where summertime ozone and its precursors come from along the Northern Colorado Front Range. Funded by a Colorado Air Quality Enterprise research grant. Pairs ozone, nitrogen oxide (NOx), and volatile organic compound (VOC) observations with NOAA HYSPLIT back trajectories and PSCF source mapping. Prepared for the Intermountain West Ozone Exchange Conference (October 2026). A first-author journal manuscript is in preparation.',
+      'Combines atmospheric transport models with 11 years of continuous air quality measurements to map the probable source regions of ozone pollution along the Northern Colorado Front Range. Pairs ozone, nitrogen oxide (NOx), and volatile organic compound (VOC) observations with NOAA HYSPLIT back trajectories and PSCF source mapping. I built and optimized the two tools behind the analysis, Skytap and pscf_py, from scratch for this project. Funded by a Colorado Air Quality Enterprise research grant. Shared as a first-author conference poster, built as an interactive web page, for the Intermountain West Ozone Exchange Conference (October 2026). A journal manuscript is in preparation.',
     tags: ['Python', 'HYSPLIT', 'PSCF', 'Geospatial Statistics', 'Docker', 'Web'],
     featured: true,
     highlights: [
@@ -202,24 +206,6 @@ export const projects = [
     impact: '285,103 back trajectories across 23 monitoring sites and 11 ozone seasons (2015–2025).',
   },
   {
-    title: 'VOC Trend Analysis Pipeline',
-    description:
-      'A Python pipeline that processes FID gas chromatography data from global flask samples, quantifying and plotting trends in non-methane volatile organic compounds.',
-    tags: ['Python', 'Atmospheric Chemistry', 'GC-FID'],
-    href: '#', // placeholder — link to a write-up or repo
-    codeHref: '', // placeholder — e.g. a GitHub repo/notebook URL
-    impact: '', // placeholder — e.g. "Processed 5+ years of flask data across 40 global sites"
-  },
-  {
-    title: 'EBAS Data Submission Library',
-    description:
-      "A generalized Python library that formats Boulder A.I.R. monitoring data into EBAS-compliant NASA Ames files for international archive submission, replacing a set of station-specific legacy scripts.",
-    tags: ['Python', 'NASA Ames', 'EBAS', 'Data QC'],
-    href: '#', // placeholder — link to a write-up or repo
-    codeHref: '',
-    impact: '',
-  },
-  {
     title: 'Broomfield Pipeline Leak Detection',
     image: {
       src: '/broomfield-leak-map.jpg',
@@ -228,9 +214,25 @@ export const projects = [
     description:
       "Traced high-frequency ethane spikes at a Broomfield monitoring station to a plume from the southwest (~210°). The plume's ethane/methane ratio (~15% by volume) was 4–5× that of other directions, and the lack of an acetylene signal pointed to un-combusted leaking gas rather than flaring. The City of Broomfield used these leads to find an underground natural gas pipeline leak in a residential neighborhood, which was shut in.",
     tags: ['Atmospheric Chemistry', 'Source Attribution', 'Time Series'],
-    href: '#', // placeholder — link to a write-up or the city's notice
+    // The City of Broomfield's public copy; the leak analysis is Supplement F (p. 41).
+    href: 'https://drive.google.com/file/d/1ZNzGXZMKSWvE-nI0Yju3wkSiXsvyNEbA/view',
+    hrefLabel: 'City of Broomfield report (Supplement F)',
     codeHref: '',
     impact: "June 2022 · Broomfield's July 2022 oil and gas update confirmed the leak was shut in with no ongoing safety issues.",
+  },
+  {
+    title: 'Isoprene Forecasting (M.S. Capstone)',
+    image: {
+      src: '/isoprene-nn-forecast.webp',
+      alt: 'Scatter plot of hourly isoprene through 2024, actual values in orange and neural network predictions in blue. Both stay near zero in winter and rise to a peak in July and August, with the predictions following the summer rise.',
+    },
+    description:
+      'Forecast isoprene 24 hours ahead. Isoprene is the main volatile organic compound (VOC) emitted by plants and a driver of summer ozone. Merged Boulder A.I.R. isoprene, ozone, particulate, and weather data with NIDIS drought, MODIS vegetation, and Open-Meteo data into one lagged-feature dataset. Removed daily and seasonal cycles with FFT and Butterworth filters for SARIMA, then compared SARIMA, XGBoost random forest, and PyTorch neural network forecasts tuned with Bayesian optimization.',
+    tags: ['Python', 'PyTorch', 'XGBoost', 'SARIMA', 'Signal Processing', 'Bayesian Optimization'],
+    href: 'https://uwex.wisconsin.edu/capstone-projects/application-of-machine-learning-techniques-for-isoprene-forecasting-a-colorado-front-range-case-study/',
+    hrefLabel: 'Capstone abstract',
+    codeHref: 'https://github.com/ggreen98/Isoprene_Capstone',
+    impact: 'The neural network cut test error about 50% versus SARIMA and came close to a published physics-based model, a promising first step for machine-learning isoprene forecasts.',
   },
 ];
 
@@ -253,11 +255,4 @@ export const webProjects = [
       alt: 'Boulder A.I.R. home page: headline over a Flatirons photo, with a live air quality card.',
     },
   },
-];
-
-export const photography = [
-  { caption: 'Portrait study, 2024' },
-  { caption: 'Landscape, 2024' },
-  { caption: 'Street, 2023' },
-  { caption: 'Architecture, 2023' },
 ];

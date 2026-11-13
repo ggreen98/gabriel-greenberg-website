@@ -40,7 +40,7 @@ export default function Hero() {
         </p>
 
         <div className="hero__actions">
-          <a className="btn ghost" href={site.resumeHref}>
+          <a className="btn ghost" href={site.resumeHref} target="_blank" rel="noreferrer">
             View résumé
           </a>
           <a className="btn" href="#contact">

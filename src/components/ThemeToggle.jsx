@@ -1,56 +1,41 @@
 import { useEffect, useState } from 'react';
 
-function getStoredTheme() {
+// Dark is the site default. A visitor's choice is saved only once they use the toggle.
+function getInitialTheme() {
   try {
     const stored = window.localStorage.getItem('theme');
-    return stored === 'light' || stored === 'dark' ? stored : null;
+    if (stored === 'light' || stored === 'dark') return stored;
   } catch {
-    return null;
+    /* ignore */
   }
-}
-
-function prefersDark() {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  return 'dark';
 }
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState(getStoredTheme);
-  const [systemDark, setSystemDark] = useState(prefersDark);
+  const [theme, setTheme] = useState(getInitialTheme);
 
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    const onChange = (e) => setSystemDark(e.matches);
-    mq.addEventListener('change', onChange);
-    return () => mq.removeEventListener('change', onChange);
-  }, []);
-
-  useEffect(() => {
-    const root = document.documentElement;
-    if (theme) {
-      root.setAttribute('data-theme', theme);
-      try {
-        window.localStorage.setItem('theme', theme);
-      } catch {
-        /* ignore */
-      }
-    } else {
-      root.removeAttribute('data-theme');
-      try {
-        window.localStorage.removeItem('theme');
-      } catch {
-        /* ignore */
-      }
-    }
+    document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  const isDark = theme ? theme === 'dark' : systemDark;
+  const isDark = theme === 'dark';
+
+  function toggle() {
+    const next = isDark ? 'light' : 'dark';
+    setTheme(next);
+    try {
+      window.localStorage.setItem('theme', next);
+    } catch {
+      /* ignore */
+    }
+  }
 
   return (
     <button
       type="button"
       className="theme-toggle"
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-      onClick={() => setTheme(isDark ? 'light' : 'dark')}
+      onClick={toggle}
     >
       {isDark ? (
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
