@@ -23,7 +23,17 @@ export default function About() {
         <div className="about__body">
           {about.paragraphs.map((p, i) => (
             <Reveal as="p" key={i} delay={i * 80} className="about__paragraph">
-              {p}
+              {Array.isArray(p)
+                ? p.map((part, j) =>
+                    typeof part === 'string' ? (
+                      part
+                    ) : (
+                      <a key={j} href={part.href} target="_blank" rel="noreferrer">
+                        {part.text}
+                      </a>
+                    )
+                  )
+                : p}
             </Reveal>
           ))}
         </div>

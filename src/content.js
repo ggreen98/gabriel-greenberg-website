@@ -71,12 +71,17 @@ export const skills = [
   },
 ];
 
+// Each paragraph is a string, or an array of strings and { text, href } links.
 export const about = {
   paragraphs: [
     "I started out as a chemist, earning my degree at Quest University Canada and running gas chromatography on air samples collected from around the world. What hooked me was the puzzle: form a hypothesis, test it against the evidence, and question a result before trusting it, especially when it's the one I was hoping for.",
     "Programming turned out to be the same kind of puzzle. I had no coding experience when I started, so I taught myself on the job, before AI assistants made that easier. I learned it well enough to earn a place in a data science master's program at the University of Wisconsin–Eau Claire without a single undergraduate programming course, and I finished with a 4.0.",
-    "Since 2020 I've done primary research on ozone and other tropospheric pollutants at Boulder A.I.R., building the data pipelines, QC tools, statistical models, and libraries that turn raw sensor data into peer-reviewed results. I want my work to matter: cleaner air, a more reliable energy system, and a clearer public picture of what we breathe.",
-    "Computer science moves faster than any field I know. In a few years I've gone from scripts on one machine to containerized pipelines running across many, and now to AI tools that change how code gets written. I'm enough of a nerd that learning the next stack, library, or technology is the fun part. But new tools make critical thinking more important, not less: an AI can write code in seconds, and someone still has to know whether the answer is right. That's the part of the job I take most seriously.",
+    [
+      "Since 2020 I've done primary research on ozone and other tropospheric pollutants at ",
+      { text: 'Boulder A.I.R.', href: 'https://bouldair.com/' },
+      ", building the data pipelines, QC tools, statistical models, and libraries that turn raw sensor data into peer-reviewed results. I want my work to matter: cleaner air, a more reliable energy system, and a clearer public picture of what we breathe.",
+    ],
+    "I've gone from scripts on one machine to containerized pipelines across many, and now to AI tools that change how code gets written. An AI can write code in seconds; someone still has to know whether the answer is right. That's the part of the job I take most seriously.",
     "Outside of work, I shoot photography, play guitar, and bake, which is really just chemistry you get to eat. Different instruments, same habit of paying close attention.",
   ],
 };
@@ -100,6 +105,14 @@ export const experience = [
     ],
   },
   {
+    range: '2025',
+    role: "Master's Degree, Data Science (GPA 4.0)",
+    org: 'University of Wisconsin–Eau Claire',
+    bullets: [
+      'Coursework: machine learning & data mining, big data / high-performance computing, statistical methods, data visualization, prescriptive analytics.',
+    ],
+  },
+  {
     range: '2019–2020',
     role: 'Research Assistant',
     org: 'Quest University Canada',
@@ -109,28 +122,20 @@ export const experience = [
     ],
   },
   {
+    range: '2020',
+    role: "Bachelor's Degree, Chemistry",
+    org: 'Quest University Canada',
+    bullets: [
+      'Coursework: general chemistry I & II (physical chemistry), organic chemistry I & II, spectroscopy, inorganic chemistry.',
+    ],
+  },
+  {
     range: 'Summer 2019',
     role: 'Research Intern',
     org: 'University of Colorado (Institute of Arctic and Alpine Research)',
     bullets: [
       "Trained to run, read, and interpret FID gas chromatography data to determine non-methane volatile organic compound (VOC) concentrations in global flask samples, for INSTAAR's global VOC monitoring program.",
       'Wrote Python to plot and interpret trends in the resulting data.',
-    ],
-  },
-  {
-    range: '2025',
-    role: "Master's Degree, Data Science (GPA 4.0)",
-    org: 'University of Wisconsin–Eau Claire',
-    bullets: [
-      'Coursework: machine learning & data mining, big data / high-performance computing, statistical methods, data visualization, prescriptive analytics.',
-    ],
-  },
-  {
-    range: '2020',
-    role: "Bachelor's Degree, Chemistry",
-    org: 'Quest University Canada',
-    bullets: [
-      'Coursework: general chemistry I & II (physical chemistry), organic chemistry I & II, spectroscopy, inorganic chemistry.',
     ],
   },
 ];
