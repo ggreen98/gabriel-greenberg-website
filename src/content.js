@@ -6,7 +6,7 @@ export const site = {
   title: 'Data Scientist',
   subtitle: 'Chemistry-trained. Data-focused.',
   email: 'gabriel.jwgreenberg@gmail.com',
-  linkedin: 'https://www.linkedin.com/in/gabe-greenberg-3604a31b7/',
+  linkedin: 'https://www.linkedin.com/in/gabriel-greenberg-3604a31b7/',
   github: 'https://github.com/ggreen98',
   resumeHref: '/Gabriel_Greenberg_Resume.pdf',
   formEndpoint: 'https://formspree.io/f/mrpenjwv',
@@ -130,7 +130,7 @@ export const experience = [
     ],
   },
   {
-    range: 'Summer 2019',
+    range: 'May 2019 – Jan 2020',
     role: 'Research Intern',
     org: 'University of Colorado (Institute of Arctic and Alpine Research)',
     bullets: [
